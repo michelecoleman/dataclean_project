@@ -22,14 +22,14 @@ It also requires the source data (see below) to be unzipped in the current worki
 * train/subject_train.txt
 
 ### Source data
-[Download the source data here.](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip). Unzip it to create directory "UCI HAR Dataset". Set that as your working directory when you run the script run_analysis.R .
+[Download the source data here.](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip) Unzip it to create directory "UCI HAR Dataset". Set that as your working directory when you run the script run_analysis.R .
 
 The unzipped archive contains files README.txt and features_info.txt with detailed information about how the measurements were generated.  
 
 [Further background information about the project.](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones)
 
 ### About the analysis
-The original data set contains 11 basic measurements types derived from raw accelerometer and gyroscopic data. Each type of measurement was made on 3 axes (X, Y, and Z), for a total of 33 measurements. Multiple such measurements were sampled throughout a given activity session with a particular subject. The original researchers calculated the mean and standard deviation of the samples for all 33 measurements during one activity session, resulting in 66 values per each activity session per each subject. They normalized the resulting values to fall in the range [-1, +1], which is desirable for machine learning algorithms.
+The original data set contains 17 basic measurements types derived from raw accelerometer and gyroscopic data. 8 of these measurement were made on 3 axes (X, Y, and Z), and thus have 3 values each. All in all there are a total of 33 basic measurements. Multiple such measurements were sampled throughout a given activity session with a particular subject. The original researchers calculated the mean and standard deviation of the samples for all 33 measurements during one activity session, resulting in 66 values per each activity session per each subject. They normalized the resulting values to fall in the range [-1, +1], which is desirable for machine learning algorithms.
 
 These 66 normalized values per subject per activity session are taken as inputs to this current analysis. The current analysis calculates the average of each of these 66 values across all sessions for a given activity, for a given subject, and generates a resulting tidy data set. More details about the specific column variables are in the CODEBOOK.md file in this repository.
 
