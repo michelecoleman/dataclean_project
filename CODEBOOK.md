@@ -21,12 +21,19 @@ These 66 normalized values per subject per activity session are taken as inputs 
 
 ### Data transformation and processing steps
 Here are the additional data transformation and processing steps done to the UCI_HAR_Dataset input in order to generate the averages_by_subject.txt output.
+
 1. Three files containing training data (train/X_train.txt, train/y_train.txt, and train/subject_train.txt) were combined to create a single training set. File X_train.txt contains the values for 561 variables described in the UCI_HAR_Dataset's file features_info.txt, for all activity sessions for a subset of subjects. File y_train.txt identifies the activity for each session, using encoding given in UCI_HAR_Dataset's file activity_labels.txt. File subject_train.txt identifies the subject who performed each activity session given in files X_train and y_train.
+
 2. Similarly, three files containing test data (test/X_test.txt, test/y_test.txt, and test/subject_test.txt) were combined to create a single testing set. These three files are structured the same way as the training data discussed in step 1. They correspond to activity sessions from a different subset of subjects.
+
 3. The testing and training data sets were combined to form a single data set. This combined set contains the data from all activity sessions from all 30 study participants. At this stage the 561 variables from the source data are all present and are all unlabeled, since the source data files X_train.txt and X_test.txt did not have headers.
+
 4. Label the 561 measurement variables using the contents of file features.txt in the UCI_HAR_Dataset. That file has one string per row, with each row corresponding to a column in the original X_train.txt and X_test.txt. Those strings include characters that are no suitable for value names in R. Before applying the labels I did some string processing to remove the undesirable characters.
+
 5. Pare down the original 561 measurement variables to only the 66 of interest. The measurements kept are those whose names included "mean()" and "std()" in the original features.txt file in the UCI_HAR_Dataset. (Some of the variables had names that included "meanFreq" and "gravityMean". These __were not kept__. ) The 66 variables kept are listed below in section "Data columns".
+
 6. Change the activity labels column from a numeric encoding to human-readable labels such as "WALKING", and "SITTING", using the schema given in the original dataset's file activity_labels.txt .
+
 7. Finally, for each of the 66 measurements of interest for each subject, calculate average values for each activity type. This is the average across multiple activity sessions for the same given activity. The resulting values is what is written out to file averages_by_subject.txt
 
 ### Data columns
