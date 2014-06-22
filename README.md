@@ -36,7 +36,7 @@ These 66 normalized values per subject per activity session are taken as inputs 
 ### A note about tidy data
 Whether it is more desirable for a given tidy data set to be "narrow" or "wide" depends on how it will be subsequently used. It would also have been plausible to create separate columns for each different activity (so for example, to have one column for tBodyAcc.mean.X_LAYING and a different column for tBodyAcc.mean.X_SITTING, etc.). Having a narrower data set makes is easier to compare values for different activity types, whether by directly comparing values "by eye" or by generating visualizations such as scatter plots. For this reason I chose to go with a narrower result set, with two dimensions (subject and activity) per each row.
 
-Hadley Wickham's [paper on tidy data](http://vita.had.co.nz/papers/tidy-data.pdf) includes a discussion of how the same data could be presented both in narrow and wide forms, with both options being considered equally tidy. See also [this discussion in the Coursera class forum](https://class.coursera.org/getdata-004/forum/thread?thread_id=262) (Coursera login required.)
+Hadley Wickham's [paper on tidy data](http://vita.had.co.nz/papers/tidy-data.pdf) includes a discussion of how the same data could be presented both in narrow and wide forms, with both options being considered equally tidy. See also [this discussion in the Coursera class forum](https://class.coursera.org/getdata-004/forum/thread?thread_id=262) (Coursera login required).
 
 
 
