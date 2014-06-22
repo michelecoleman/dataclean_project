@@ -15,7 +15,7 @@ The unzipped archive contains files README.txt and features_info.txt with detail
 
 
 ### About the analysis
-The original data set contains 11 basic measurements types derived from raw accelerometer and gyroscopic data. Each type of measurement was made on 3 axes (X, Y, and Z), for a total of 33 measurements. Multiple such measurements were sampled throughout a given activity session with a particular subject. The original researchers calculated the mean and standard deviation of the samples for all 33 measurements during one activity session, resulting in 66 values per each activity session per each subject. They normalized the resulting values to fall in the range [-1, +1], which is desirable for machine learning algorithms.
+The original data set contains 17 basic measurements types derived from raw accelerometer and gyroscopic data. 8 of these measurement were made on 3 axes (X, Y, and Z), and thus have 3 values each. All in all there are a total of 33 basic measurements. Multiple such measurements were sampled throughout a given activity session with a particular subject. The original researchers calculated the mean and standard deviation of the samples for all 33 measurements during one activity session, resulting in 66 values per each activity session per each subject. They normalized the resulting values to fall in the range [-1, +1], which is desirable for machine learning algorithms.
 
 These 66 normalized values per subject per activity session are taken as inputs to this current analysis. The current analysis calculates the average of each of these 66 values across all sessions for a given activity, for a given subject, and generates a resulting tidy data set. More details about the specific column variables are in the CODEBOOK.md file in this repository.
 
@@ -47,158 +47,144 @@ The following shows the columns in the dataset averages_by_subject.txt. For the 
 
 **activity** Activity performed, one of: WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, or LAYING(sic). ("LAYING" is how it was labelled in the original UCI_HAR_Dataset. Presumably they meant "lying down" rather than, say, "laying tile".)
 
-|**tBodyAcc.mean.X**|1|tBodyAcc-mean()-X|
-|**tBodyAcc.mean.Y**|2|tBodyAcc-mean()-Y|
-|**tBodyAcc.mean.Z**|3|tBodyAcc-mean()-Z|
-|**tBodyAcc.std.X**|4|tBodyAcc-std()-X|
-|**tBodyAcc.std.Y**|5|tBodyAcc-std()-Y|
-|**tBodyAcc.std.Z**|6|tBodyAcc-std()-Z|
-|**tGravityAcc.mean.X**|41|tGravityAcc-mean()-X|
-|**tGravityAcc.mean.Y**|42|tGravityAcc-mean()-Y|
-|**tGravityAcc.mean.Z**|43|tGravityAcc-mean()-Z|
-|**tGravityAcc.std.X**|44|tGravityAcc-std()-X|
+**tBodyAcc.mean.X** 1           tBodyAcc-mean()-X
 
-**tBodyAcc.mean.X**    1 tBodyAcc-mean()-X
+**tBodyAcc.mean.Y**     2           tBodyAcc-mean()-Y
 
-**tBodyAcc.mean.Y**	2 tBodyAcc-mean()-Y
+**tBodyAcc.mean.Z**     3           tBodyAcc-mean()-Z
 
-**tBodyAcc.mean.Z**	3 tBodyAcc-mean()-Z
+**tBodyAcc.std.X**     4           tBodyAcc-std()-X
 
-**tBodyAcc.std.X**	4 tBodyAcc-std()-X
+**tBodyAcc.std.Y**     5           tBodyAcc-std()-Y
 
-**tBodyAcc.std.Y**	5 tBodyAcc-std()-Y
+**tBodyAcc.std.Z**     6           tBodyAcc-std()-Z
 
-**tBodyAcc.std.Z**	6 tBodyAcc-std()-Z
 
+**tGravityAcc.mean.X**     41     tGravityAcc-mean()-X
 
-**tGravityAcc.mean.X**	41 tGravityAcc-mean()-X
+**tGravityAcc.mean.Y**     42     tGravityAcc-mean()-Y
 
-**tGravityAcc.mean.Y**	42 tGravityAcc-mean()-Y
+**tGravityAcc.mean.Z**     43     tGravityAcc-mean()-Z
 
-**tGravityAcc.mean.Z**	43 tGravityAcc-mean()-Z
+**tGravityAcc.std.X**     44     tGravityAcc-std()-X
 
-**tGravityAcc.std.X**	44 tGravityAcc-std()-X
+**tGravityAcc.std.Y**     45     tGravityAcc-std()-Y
 
-**tGravityAcc.std.Y**	45 tGravityAcc-std()-Y
+**tGravityAcc.std.Z**     46     tGravityAcc-std()-Z
 
-**tGravityAcc.std.Z**	46 tGravityAcc-std()-Z
 
+**tBodyAccJerk.mean.X**     81     tBodyAccJerk-mean()-X
 
-**tBodyAccJerk.mean.X**	81 tBodyAccJerk-mean()-X
+**tBodyAccJerk.mean.Y**     82     tBodyAccJerk-mean()-Y
 
-**tBodyAccJerk.mean.Y**	82 tBodyAccJerk-mean()-Y
+**tBodyAccJerk.mean.Z**     83     tBodyAccJerk-mean()-Z
 
-**tBodyAccJerk.mean.Z**	83 tBodyAccJerk-mean()-Z
+**tBodyAccJerk.std.X**     84     tBodyAccJerk-std()-X
 
-**tBodyAccJerk.std.X**	84 tBodyAccJerk-std()-X
+**tBodyAccJerk.std.Y**     85     tBodyAccJerk-std()-Y
 
-**tBodyAccJerk.std.Y**	85 tBodyAccJerk-std()-Y
+**tBodyAccJerk.std.Z**     86     tBodyAccJerk-std()-Z
 
-**tBodyAccJerk.std.Z**	86 tBodyAccJerk-std()-Z
 
+**tBodyGyro.mean.X**     121     tBodyGyro-mean()-X
 
-**tBodyGyro.mean.X**	121 tBodyGyro-mean()-X
+**tBodyGyro.mean.Y**     122     tBodyGyro-mean()-Y
 
-**tBodyGyro.mean.Y**	122 tBodyGyro-mean()-Y
+**tBodyGyro.mean.Z**     123     tBodyGyro-mean()-Z
 
-**tBodyGyro.mean.Z**	123 tBodyGyro-mean()-Z
+**tBodyGyro.std.X**     124     tBodyGyro-std()-X
 
-**tBodyGyro.std.X**	124 tBodyGyro-std()-X
+**tBodyGyro.std.Y**     125     tBodyGyro-std()-Y
 
-**tBodyGyro.std.Y**	125 tBodyGyro-std()-Y
+**tBodyGyro.std.Z**     126     tBodyGyro-std()-Z
 
-**tBodyGyro.std.Z**	126 tBodyGyro-std()-Z
 
+**tBodyGyroJerk.mean.X**     161     tBodyGyroJerk-mean()-X
 
-**tBodyGyroJerk.mean.X**	161 tBodyGyroJerk-mean()-X
+**tBodyGyroJerk.mean.Y**     162     tBodyGyroJerk-mean()-Y
 
-**tBodyGyroJerk.mean.Y**	162 tBodyGyroJerk-mean()-Y
+**tBodyGyroJerk.mean.Z**     163     tBodyGyroJerk-mean()-Z
 
-**tBodyGyroJerk.mean.Z**	163 tBodyGyroJerk-mean()-Z
+**tBodyGyroJerk.std.X**     164     tBodyGyroJerk-std()-X
 
-**tBodyGyroJerk.std.X**	164 tBodyGyroJerk-std()-X
+**tBodyGyroJerk.std.Y**     165     tBodyGyroJerk-std()-Y
 
-**tBodyGyroJerk.std.Y**	165 tBodyGyroJerk-std()-Y
+**tBodyGyroJerk.std.Z**     166     tBodyGyroJerk-std()-Z
 
-**tBodyGyroJerk.std.Z**	166 tBodyGyroJerk-std()-Z
 
+**tBodyAccMag.mean**     201     tBodyAccMag-mean()
 
-**tBodyAccMag.mean**	201 tBodyAccMag-mean()
+**tBodyAccMag.std**     202     tBodyAccMag-std()
 
-**tBodyAccMag.std**	202 tBodyAccMag-std()
+**tGravityAccMag.mean**     214     tGravityAccMag-mean()
 
-**tGravityAccMag.mean**	214 tGravityAccMag-mean()
+**tGravityAccMag.std**     215     tGravityAccMag-std()
 
-**tGravityAccMag.std**	215 tGravityAccMag-std()
+**tBodyAccJerkMag.mean**     227     tBodyAccJerkMag-mean()
 
-**tBodyAccJerkMag.mean**	227 tBodyAccJerkMag-mean()
+**tBodyAccJerkMag.std**     228     tBodyAccJerkMag-std()
 
-**tBodyAccJerkMag.std**	228 tBodyAccJerkMag-std()
+**tBodyGyroMag.mean**     240     tBodyGyroMag-mean()
 
-**tBodyGyroMag.mean**	240 tBodyGyroMag-mean()
+**tBodyGyroMag.std**     241     tBodyGyroMag-std()
 
-**tBodyGyroMag.std**	241 tBodyGyroMag-std()
+**tBodyGyroJerkMag.mean**     253     tBodyGyroJerkMag-mean()
 
-**tBodyGyroJerkMag.mean**	253 tBodyGyroJerkMag-mean()
+**tBodyGyroJerkMag.std**     254     tBodyGyroJerkMag-std()
 
-**tBodyGyroJerkMag.std**	254 tBodyGyroJerkMag-std()
 
+**fBodyAcc.mean.X**     266     fBodyAcc-mean()-X
 
-**fBodyAcc.mean.X**	266 fBodyAcc-mean()-X
+**fBodyAcc.mean.Y**     267     fBodyAcc-mean()-Y
 
-**fBodyAcc.mean.Y**	267 fBodyAcc-mean()-Y
+**fBodyAcc.mean.Z**     268     fBodyAcc-mean()-Z
 
-**fBodyAcc.mean.Z**	268 fBodyAcc-mean()-Z
+**fBodyAcc.std.X**     269     fBodyAcc-std()-X
 
-**fBodyAcc.std.X**	269 fBodyAcc-std()-X
+**fBodyAcc.std.Y**     270     fBodyAcc-std()-Y
 
-**fBodyAcc.std.Y**	270 fBodyAcc-std()-Y
+**fBodyAcc.std.Z**     271     fBodyAcc-std()-Z
 
-**fBodyAcc.std.Z**	271 fBodyAcc-std()-Z
 
+**fBodyAccJerk.mean.X**     345     fBodyAccJerk-mean()-X
 
-**fBodyAccJerk.mean.X**	345 fBodyAccJerk-mean()-X
+**fBodyAccJerk.mean.Y**     346     fBodyAccJerk-mean()-Y
 
-**fBodyAccJerk.mean.Y**	346 fBodyAccJerk-mean()-Y
+**fBodyAccJerk.mean.Z**     347     fBodyAccJerk-mean()-Z
 
-**fBodyAccJerk.mean.Z**	347 fBodyAccJerk-mean()-Z
+**fBodyAccJerk.std.X**     348     fBodyAccJerk-std()-X
 
-**fBodyAccJerk.std.X**	348 fBodyAccJerk-std()-X
+**fBodyAccJerk.std.Y**     349     fBodyAccJerk-std()-Y
 
-**fBodyAccJerk.std.Y**	349 fBodyAccJerk-std()-Y
+**fBodyAccJerk.std.Z**     350     fBodyAccJerk-std()-Z
 
-**fBodyAccJerk.std.Z**	350 fBodyAccJerk-std()-Z
 
+**fBodyGyro.mean.X**     424     fBodyGyro-mean()-X
 
-**fBodyGyro.mean.X**	424 fBodyGyro-mean()-X
+**fBodyGyro.mean.Y**     425     fBodyGyro-mean()-Y
 
-**fBodyGyro.mean.Y**	425 fBodyGyro-mean()-Y
+**fBodyGyro.mean.Z**     426     fBodyGyro-mean()-Z
 
-**fBodyGyro.mean.Z**	426 fBodyGyro-mean()-Z
+**fBodyGyro.std.X**     427     fBodyGyro-std()-X
 
-**fBodyGyro.std.X**	427 fBodyGyro-std()-X
+**fBodyGyro.std.Y**     428     fBodyGyro-std()-Y
 
-**fBodyGyro.std.Y**	428 fBodyGyro-std()-Y
+**fBodyGyro.std.Z**     429     fBodyGyro-std()-Z
 
-**fBodyGyro.std.Z**	429 fBodyGyro-std()-Z
 
 
+**fBodyAccMag.mean**     503     fBodyAccMag-mean()
 
-**fBodyAccMag.mean**	503 fBodyAccMag-mean()
+**fBodyAccMag.std**     504     fBodyAccMag-std()
 
-**fBodyAccMag.std**	504 fBodyAccMag-std()
+**fBodyBodyAccJerkMag.mean**     516     fBodyBodyAccJerkMag-mean()
 
-**fBodyBodyAccJerkMag.mean**	516 fBodyBodyAccJerkMag-mean()
+**fBodyBodyAccJerkMag.std**     517     fBodyBodyAccJerkMag-std()
 
-**fBodyBodyAccJerkMag.std**	517 fBodyBodyAccJerkMag-std()
+**fBodyBodyGyroMag.mean**     529     fBodyBodyGyroMag-mean()
 
-**fBodyBodyGyroMag.mean**	529 fBodyBodyGyroMag-mean()
+**fBodyBodyGyroMag.std**     530     fBodyBodyGyroMag-std()
 
-**fBodyBodyGyroMag.std**	530 fBodyBodyGyroMag-std()
+**fBodyBodyGyroJerkMag.mean**     542     fBodyBodyGyroJerkMag-mean()
 
-**fBodyBodyGyroJerkMag.mean**	542 fBodyBodyGyroJerkMag-mean()
-
-**fBodyBodyGyroJerkMag.std**	543 fBodyBodyGyroJerkMag-std()
-
-
-
+**fBodyBodyGyroJerkMag.std**     543     fBodyBodyGyroJerkMag-std()
