@@ -47,6 +47,17 @@ The following shows the columns in the dataset averages_by_subject.txt. For the 
 
 **activity** Activity performed, one of: WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, or LAYING(sic). ("LAYING" is how it was labelled in the original UCI_HAR_Dataset. Presumably they meant "lying down" rather than, say, "laying tile".)
 
+|**tBodyAcc.mean.X**|1|tBodyAcc-mean()-X|
+|**tBodyAcc.mean.Y**|2|tBodyAcc-mean()-Y|
+|**tBodyAcc.mean.Z**|3|tBodyAcc-mean()-Z|
+|**tBodyAcc.std.X**|4|tBodyAcc-std()-X|
+|**tBodyAcc.std.Y**|5|tBodyAcc-std()-Y|
+|**tBodyAcc.std.Z**|6|tBodyAcc-std()-Z|
+|**tGravityAcc.mean.X**|41|tGravityAcc-mean()-X|
+|**tGravityAcc.mean.Y**|42|tGravityAcc-mean()-Y|
+|**tGravityAcc.mean.Z**|43|tGravityAcc-mean()-Z|
+|**tGravityAcc.std.X**|44|tGravityAcc-std()-X|
+
 **tBodyAcc.mean.X**    1 tBodyAcc-mean()-X
 
 **tBodyAcc.mean.Y**	2 tBodyAcc-mean()-Y
